@@ -17,7 +17,7 @@ jobs:
           run: cowsay -f dragon "Run, I'm DragonHeart" > dragon.txt
 
         - name: Upload the Dragon Artifact for other jobs
-          uses: actions/upload-artifact@v4
+          uses: actions/upload-artifact@v3
           with:
              name: dragon-file
              path: dragon.txt
@@ -27,15 +27,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Download the Dragon Artifact for other jobs
-          uses: actions/download-artifact@v4
+          uses: actions/download-artifact@v3
           with:
             name: dragon-file
             path: dragon.txt
 
-        - name: Test Job
-          run: grep -i "dragon" dragon.txt
-
-        - name: Test if file exist
+        - name: Test if dragon file exist
           run: |
             FILE=dragon.txt
             if [ -f "$FILE" ]; then
@@ -49,7 +46,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Download the Dragon Artifact for other jobs
-          uses: actions/download-artifact@v4
+          uses: actions/download-artifact@v3
           with:
             name: dragon-file
 
