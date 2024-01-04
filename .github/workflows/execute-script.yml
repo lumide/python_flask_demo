@@ -14,9 +14,10 @@ jobs:
             ls -l
 
         - name: Execute Shell Script 
-          run: ./ascii.sh
+          run: |
+            chmod +x ascii.sh
+            ./ascii.sh
             
-        
         - name: Read File and List files Again
           run: |
             ls -l
