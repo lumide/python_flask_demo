@@ -11,14 +11,14 @@ jobs:
         
         - name: Read File and List files
           run: |
-            ls -l
+            ls -latr
 
         - name: Execute Shell Script 
           run: |
-            chmod +x .github/workflows/ascii.sh
-            ./.github/workflows/ascii.sh
+            chmod +x ./ascii.sh
+            ./ascii.sh
             
         - name: Read File and List files Again
           run: |
-            ls -l
+            ls -latr
 
