@@ -14,30 +14,31 @@ jobs:
             sudo apt-get install cowsay -y
         
         - name: Generate ASCII message
-          run: cowsay -f dragon "Run, I'm DragonHeart" > dragon.txt
+          run: cowsay -f dog "Run, I'm DogHeart" > dog.txt
 
-        - name: Upload the Dragon Artifact for other jobs
-          uses: actions/upload-artifact@v3
+        - name: Upload the Dog Artifact for other jobs
+          uses: actions/upload-artifact@v4
           with:
-             name: dragon-file
-             path: dragon.txt
+             name: dog-file
+             path: dog.txt
     
     test_job_2:
         needs: build_job_1
         runs-on: ubuntu-latest
         steps:
-        - name: Download the Dragon Artifact for other jobs
-          uses: actions/download-artifact@v3
+        - name: Download the Dog Artifact for other jobs
+          uses: actions/download-artifact@v4
           with:
-            name: dragon-file
-            path: dragon.txt
+            name: dog-file
 
         - name: Test File
-          run: grep -i "dragon" dragon.txt
-
-        - name: Test if dragon file exist
           run: |
-            FILE=dragon.txt
+            ls -la
+            grep -i "DogHeart" dog.txt
+
+        - name: Test if dog file exist
+          run: |
+            FILE=dog.txt
             if [ -f "$FILE" ]; then
                 echo "$FILE exists."
             else 
@@ -48,16 +49,16 @@ jobs:
         needs: test_job_2
         runs-on: ubuntu-latest
         steps:
-        - name: Download the Dragon Artifact for other jobs
-          uses: actions/download-artifact@v3
+        - name: Download the Dog Artifact for other jobs
+          uses: actions/download-artifact@v4
           with:
-            name: dragon-file
+            name: dradoggon-file
 
         - name: Deploying Job
           run: echo "Deploying ..." 
 
-        - name: Read Dragon File and List files
+        - name: Read Dog File and List files
           run: |
-            cat dragon.txt
+            cat dog.txt
             ls -latr
 
