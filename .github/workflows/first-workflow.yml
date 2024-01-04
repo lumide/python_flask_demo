@@ -8,12 +8,12 @@ jobs:
         steps:
         - name: Checkout Repo
           uses: actions/checkout@v4
-          
+
         - name: Check Ubuntu Version
-          run: cat /etc/os-release
-
-        - name: Welcome message
-          run: echo "Welcome to GitHub Actions"
-
-        - name: Read files in repo
-          run: ls -la
+          run: | 
+            cat /etc/os-release
+            run: echo "Welcome to GitHub Actions"
+            run: ls -latr
+        
+        - name: Generate ASCII message
+          run: cowsay -f dragon "Run, I'm DragonHeart" > dragon.txt
