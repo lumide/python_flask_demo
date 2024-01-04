@@ -32,6 +32,9 @@ jobs:
             name: dragon-file
             path: dragon.txt
 
+        - name: Test File
+          run: grep -i "dragon" dragon.txt
+
         - name: Test if dragon file exist
           run: |
             FILE=dragon.txt
