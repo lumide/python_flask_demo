@@ -15,8 +15,8 @@ jobs:
 
         - name: Execute Shell Script 
           run: |
-            chmod +x ascii.sh
-            ./ascii.sh
+            chmod +x .github/workflows/ascii.sh
+            ./.github/workflows/ascii.sh
             
         - name: Read File and List files Again
           run: |
