@@ -1,0 +1,23 @@
+name: Generate ASCII artwork
+
+on: push
+
+jobs:
+    genrate_ascii:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+        
+        - name: Read File and List files
+          run: |
+            ls -l
+
+        - name: Execute Shell Script 
+          run: ./ascii.sh
+            
+        
+        - name: Read File and List files Again
+          run: |
+            ls -l
+
