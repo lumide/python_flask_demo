@@ -52,7 +52,7 @@ jobs:
         - name: Download the Dog Artifact for other jobs
           uses: actions/download-artifact@v4
           with:
-            name: dradoggon-file
+            name: dog-file
 
         - name: Deploying Job
           run: echo "Deploying ..." 
