@@ -12,8 +12,8 @@ jobs:
         - name: Check Ubuntu Version
           run: | 
             cat /etc/os-release
-            run: echo "Welcome to GitHub Actions"
-            run: ls -latr
+            echo "Welcome to GitHub Actions"
+            ls -latr
         
         - name: Generate ASCII message
           run: cowsay -f dragon "Run, I'm DragonHeart" > dragon.txt
