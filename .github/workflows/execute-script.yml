@@ -1,4 +1,4 @@
-name: Generate ASCII artwork
+name: Executing Shell script
 
 on: push
 
