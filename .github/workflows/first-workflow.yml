@@ -1,0 +1,16 @@
+name: First workflow
+
+on: push
+
+jobs:
+    First_Job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check Ubuntu Version
+          run: cat /etc/os-release
+
+        - name: Welcome message
+          run: echo "Welcome to GitHub Actions"
+
+        - name: Read files in repo
+          run: ls -la
